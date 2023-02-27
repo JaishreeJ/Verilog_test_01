@@ -1,0 +1,26 @@
+module mux2_tb;
+   reg a, c, sel;
+   wire b;
+   mux2 tb(.a(a), .b(b), .sel(sel), .c(c));
+   initial begin
+
+      a = 0; c = 1; sel = 1;
+      #10;
+     
+      a = 0; c = 0; sel = 0;
+      #10;
+     
+      a = 1; c = 1; sel = 1;
+      #10;
+       a = 1; c = 0; sel = 1;
+      #10;
+      
+     
+      $finish;
+   end
+initial
+begin
+$dumpfile("mux1.vcd");
+$dumpvars;
+end
+endmodule
